@@ -7,24 +7,12 @@ WORKDIR /app
 COPY backend ./
 
 RUN go mod download && \
-    GOOS=linux GOARCH=amd64 go build -o /out/tinylink
-
-FROM oven/bun:latest AS frontend
+    GOOS=linux GOARCH=amd64 go build -o /out/ai-spellcheck
 
 WORKDIR /app
 
-COPY frontend ./
-
-RUN bun install --frozen-lockfile && \
-    bun run build
-
-FROM alpine:latest
-
-WORKDIR /app
-
-COPY --from=backend /out/tinylink ./
-COPY --from=frontend /app/build ./public
+COPY --from=backend /out/ai-spellcheck ./
 
 EXPOSE 3000
 
-CMD ["./tinylink"]
+CMD ["./ai-spellcheck"]
