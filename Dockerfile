@@ -9,6 +9,8 @@ COPY backend ./
 RUN go mod download && \
     GOOS=linux GOARCH=amd64 go build -o /out/ai-spellcheck
 
+FROM alpine:latest
+
 WORKDIR /app
 
 COPY --from=backend /out/ai-spellcheck ./
