@@ -2,7 +2,10 @@ module github.com/h00s/tinylink
 
 go 1.22
 
-require github.com/go-raptor/raptor v0.9.3
+require (
+	github.com/go-raptor/raptor v0.9.3
+	github.com/madebywelch/anthropic-go/v2 v2.2.3
+)
 
 require (
 	github.com/BurntSushi/toml v1.4.0 // indirect

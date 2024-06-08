@@ -7,6 +7,6 @@ import (
 
 func Controllers() raptor.Controllers {
 	return raptor.Controllers{
-		&controllers.SpellcheckController{},
+		&controllers.GrammarController{},
 	}
 }
