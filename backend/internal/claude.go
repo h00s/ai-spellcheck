@@ -26,9 +26,9 @@ func (c *Claude) CheckGrammar(content models.Content) (models.Content, error) {
 
 	switch content.Lang {
 	case "hr":
-		prompt = "Provjeri gramatiku u sljedećem tekstu i odgovori samo sa ispravljenim tekstom bez ikakvog uvoda ili odgovori izvornim tekstom ukoliko nije potreban ispravak: "
+		prompt = "Provjeri gramatiku na hrvatskom jeziku u sljedećem tekstu i odgovori samo sa ispravljenim tekstom bez ikakvog uvoda ili odgovori izvornim tekstom ukoliko nije potreban ispravak: "
 	case "en":
-		prompt = "Check the grammar in the following text and respond only with the corrected text without any introduction or respond with the original text if no correction is needed: "
+		prompt = "Check the grammar in the following english text and respond only with the corrected text without any introduction or respond with the original text if no correction is needed: "
 	default:
 		return content, errors.New("unsupported language")
 	}
