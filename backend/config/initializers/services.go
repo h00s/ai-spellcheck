@@ -7,6 +7,6 @@ import (
 
 func Services(c *raptor.Config) raptor.Services {
 	return raptor.Services{
-		&services.GrammarService{},
+		services.NewGrammarService(),
 	}
 }
