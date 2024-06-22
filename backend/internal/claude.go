@@ -36,7 +36,7 @@ func (c *Claude) CheckGrammar(content models.Content) (models.Content, error) {
 	prompt = prompt + content.Text
 	request := anthropic.NewMessageRequest(
 		[]anthropic.MessagePartRequest{{Role: "user", Content: []anthropic.ContentBlock{anthropic.NewTextContentBlock(prompt)}}},
-		anthropic.WithModel[anthropic.MessageRequest](anthropic.Claude3Haiku),
+		anthropic.WithModel[anthropic.MessageRequest](anthropic.Claude35Sonnet),
 		anthropic.WithMaxTokens[anthropic.MessageRequest](1000),
 	)
 
