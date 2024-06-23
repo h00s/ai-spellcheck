@@ -2,8 +2,10 @@ module github.com/h00s/tinylink
 
 go 1.22
 
+replace github.com/go-raptor/raptor/v2 => ../../go-raptor/raptor/v2
+
 require (
-	github.com/go-raptor/raptor v1.0.0
+	github.com/go-raptor/raptor/v2 v2.0.0
 	github.com/madebywelch/anthropic-go/v2 v2.2.4
 )
 
@@ -11,6 +13,8 @@ require (
 	github.com/BurntSushi/toml v1.4.0 // indirect
 	github.com/andybalholm/brotli v1.1.0 // indirect
 	github.com/gofiber/fiber/v2 v2.52.4 // indirect
+	github.com/gofiber/fiber/v3 v3.0.0-beta.2 // indirect
+	github.com/gofiber/utils/v2 v2.0.0-beta.4 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect

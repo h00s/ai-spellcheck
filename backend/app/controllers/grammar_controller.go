@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/go-raptor/raptor"
+	"github.com/go-raptor/raptor/v2"
 	"github.com/h00s/tinylink/app/models"
 	"github.com/h00s/tinylink/app/services"
 )
@@ -14,9 +14,9 @@ type GrammarController struct {
 
 func (sc *GrammarController) Check(c *raptor.Context) error {
 	var link models.Content
-	if err := c.BodyParser(&link); err != nil {
-		return c.JSONError(raptor.NewErrorBadRequest("Invalid JSON"))
-	}
+	//if err := c.BodyParser(&link); err != nil {
+	//	return c.JSONError(raptor.NewErrorBadRequest("Invalid JSON"))
+	//}
 
 	validatedContent, err := sc.Grammar.Check(link)
 	if err != nil {
